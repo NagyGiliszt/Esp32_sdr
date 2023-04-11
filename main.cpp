@@ -1,5 +1,7 @@
+#include <Arduino.h>
 #include "esp32-hal-adc.h"
 #include "driver/dac.h"
+#include <math.h>
 
 // In-phase and quadrature pins
 #define I_PIN 36
