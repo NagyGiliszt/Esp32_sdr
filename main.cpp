@@ -38,8 +38,8 @@ size_t buffer_pos = 0;
 
 // ADC interrupt service routine
 void IRAM_ATTR adc_isr() {
-  int16_t i = adc1_get_raw(I_PIN);
-  int16_t q = adc1_get_raw(Q_PIN);
+  int16_t i = analogRead(I_PIN);
+  int16_t q = analogRead(Q_PIN);
   buffer[buffer_pos++] = {i, q};
   if (buffer_pos >= BUFFER_SIZE) {
     buffer_pos = 0;
